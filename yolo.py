@@ -23,7 +23,7 @@ def run():
 
     if img_file is not None:
         st.image(img_file,use_column_width=False, width=1000)
-        save_image_path = 'C:\\Users\\siddh\\PycharmProjects\\pythonProject2'+img_file.name
+        save_image_path = ''+img_file.name
         with open(save_image_path, "wb") as f:
             f.write(img_file.getbuffer())
         result = save_image_path
