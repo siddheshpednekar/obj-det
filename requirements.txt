@@ -1,6 +1,6 @@
 matplotlib
 numpy
-opencv_python
+opencv_python==4.6.0.66
 pandas
 Pillow
 streamlit
