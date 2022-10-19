@@ -19,6 +19,7 @@ import numpy as np
 
 
 def run():
+    st.header('Object detection')
     img_file = st.file_uploader("Choose an Image", type=["jpg", "png"])
 
     if img_file is not None:
