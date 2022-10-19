@@ -19,7 +19,7 @@ import numpy as np
 
 
 def run():
-    st.header('Object detection')
+    st.header('Object detection using Yolo')
     img_file = st.file_uploader("Choose an Image", type=["jpg", "png"])
 
     if img_file is not None:
@@ -102,10 +102,11 @@ def run():
 
        
 
-
+        st.subheader('Output:')
         st.image('oimage.jpg', width=1000)
         #for i in range(len(indexes)):
             #class_output.append(classes[class_ids[i]])
+        st.subheader('Objects detected:')
         df = pd.DataFrame({'classes':class_output})
 
         st.write(df.value_counts().rename_axis('class').reset_index(name='count')
