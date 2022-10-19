@@ -84,10 +84,12 @@ def run():
         colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
         indexes = np.array(indexes)
-
+        
+        class_output = []
         for i in indexes.flatten():
           x, y, w, h = boxes[i]
           label = str(classes[class_ids[i]])
+          class_ouutput.append(label)
           confi = str(round(confidences[i], 2))
           color = colors[i]
           cv2.rectangle(img, (x, y), (x+w, y+h), color, 2)
@@ -98,12 +100,12 @@ def run():
         cv2.imwrite('oimage.jpg', img)
         print('saved')
 
-        class_output = []
+       
 
 
         st.image('oimage.jpg', width=1000)
-        for i in range(len(indexes)):
-            class_output.append(classes[class_ids[i]])
+        #for i in range(len(indexes)):
+            #class_output.append(classes[class_ids[i]])
         df = pd.DataFrame({'classes':class_output})
 
         st.write(df.value_counts().rename_axis('class').reset_index(name='count')
