@@ -89,7 +89,7 @@ def run():
         for i in indexes.flatten():
           x, y, w, h = boxes[i]
           label = str(classes[class_ids[i]])
-          class_ouutput.append(label)
+          class_output.append(label)
           confi = str(round(confidences[i], 2))
           color = colors[i]
           cv2.rectangle(img, (x, y), (x+w, y+h), color, 2)
